@@ -36,7 +36,6 @@ package com.raywenderlich.android.rwquotes
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import com.raywenderlich.android.rwquotes.data.Quote
 import com.raywenderlich.android.rwquotes.data.QuotesRepositoryImpl
 import com.raywenderlich.android.rwquotes.ui.viewmodel.QuotesViewModel
@@ -126,7 +125,7 @@ class QuotesViewModelTest {
     viewModel.updateQuote(testQuote)
     isLoading = isLoadingLiveData.value
     assertNotNull(isLoading)
-    isLoading?.let { assertTrue(it) }
+    isLoading?.let { assertFalse(it) }
   }
 
 
