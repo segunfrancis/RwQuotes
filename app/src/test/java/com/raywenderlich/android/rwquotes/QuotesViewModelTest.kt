@@ -126,7 +126,7 @@ class QuotesViewModelTest {
     viewModel.updateQuote(testQuote)
     isLoading = isLoadingLiveData.value
     assertNotNull(isLoading)
-    isLoading?.let { assertFalse(it) }
+    isLoading?.let { assertTrue(it) }
   }
 
 
